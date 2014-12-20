@@ -1,0 +1,34 @@
+{
+  "Items": [
+    {
+      "Type": "Section",
+      "Title": "Happening Now",
+      "Icon": "/Assets/DataImages/comment.png",
+      "Target": "HappeningNowPage"
+    },
+    {
+      "Type": "Section",
+      "Title": "Lets Talk Water",
+      "Icon": "/Assets/DataImages/world.png",
+      "Target": "LetsTalkWaterPage"
+    },
+    {
+      "Type": "Section",
+      "Title": "Recycling Sources",
+      "Icon": "/Assets/DataImages/repeatall.png",
+      "Target": "RecyclingSourcesPage"
+    },
+    {
+      "Type": "Section",
+      "Title": "Farmer's Market",
+      "Icon": "/Assets/DataImages/emoji.png",
+      "Target": "FarmersMarketPage"
+    },
+    {
+      "Type": "Section",
+      "Title": "Stats",
+      "Icon": "/Assets/DataImages/menuitem-icon.png",
+      "Target": "StatsPage"
+    }
+  ]
+}

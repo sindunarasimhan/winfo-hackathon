@@ -1,0 +1,121 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:AppStudio.Controls"
+    xmlns:html2xaml="using:AppStudio.Controls.Html2Xaml"
+    xmlns:commands="using:AppStudio.Commands">
+
+    <!-- ListBigPictures -->
+    <DataTemplate x:Key="GETLOCATIONList">
+        <Grid MinWidth="420">
+            <GridView ItemsSource="{Binding PreviewItems}" SelectionMode="None" IsSwipeEnabled="False" IsItemClickEnabled="True" commands:ItemClickCommand.Command="{Binding ItemClickCommand}"
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                      ItemTemplate="{StaticResource GETLOCATIONItem}">
+            </GridView>
+            <ProgressBar Height="40" Foreground="White" VerticalAlignment="Top" IsIndeterminate="True" Visibility="{Binding ProgressBarVisibility}" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="GETLOCATIONListSnapped">
+        <Grid Width="230">
+            <GridView ItemsSource="{Binding PreviewItems}" SelectionMode="None" IsSwipeEnabled="False" IsItemClickEnabled="True" commands:ItemClickCommand.Command="{Binding ItemClickCommand}"
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                      ItemTemplate="{StaticResource GETLOCATIONItemSnapped}">
+            </GridView>
+            <ProgressBar Height="40" Foreground="White" VerticalAlignment="Top" IsIndeterminate="True" Visibility="{Binding ProgressBarVisibility}" />
+        </Grid>
+    </DataTemplate>
+
+    <!-- ListBigPictures Item -->
+    <DataTemplate x:Key="GETLOCATIONItem">
+        <Grid Width="360" Height="240">
+            <Grid.Background>
+                <ImageBrush ImageSource="{Binding Image, Converter={StaticResource ThumbnailConverter}, ConverterParameter=340}" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1.1*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                        <GradientStop Offset="0.0" Color="#22000000" />
+                        <GradientStop Offset="0.4" Color="#44000000" />
+                        <GradientStop Offset="0.6" Color="#aa000000" />
+                        <GradientStop Offset="1.0" Color="#FF000000" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <StackPanel Grid.Row="1" Margin="12,5,12,12">
+                <TextBlock Style="{StaticResource ItemHeaderText}" Text="" MaxHeight="40" />
+                <TextBlock Style="{StaticResource ItemSubheaderText}" Text="" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="GETLOCATIONItemSnapped">
+        <Grid Width="220" Height="160">
+            <Grid.Background>
+                <ImageBrush ImageSource="{Binding Image, Converter={StaticResource ThumbnailConverter}, ConverterParameter=340}" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1.1*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                        <GradientStop Offset="0.0" Color="#22000000" />
+                        <GradientStop Offset="0.4" Color="#44000000" />
+                        <GradientStop Offset="0.6" Color="#aa000000" />
+                        <GradientStop Offset="1.0" Color="#FF000000" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <StackPanel Grid.Row="1" Margin="12">
+                <TextBlock Style="{StaticResource ItemHeaderTextSnapped}" Text="" MaxHeight="40" />
+                <TextBlock Style="{StaticResource ItemSubheaderTextSnapped}" Text="" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+
+    <!-- DetailMultiColumn -->
+    <DataTemplate x:Key="GETLOCATION1DetailDetail">
+      <ScrollViewer VerticalScrollBarVisibility="Auto" ZoomMode="Disabled">
+        <Grid Margin="12,0">
+          <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+
+          <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+
+          <TextBlock Grid.ColumnSpan="2" Style="{StaticResource HeaderText}" Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter = 140}" />
+          
+          <Button Grid.Row="2" Margin="0,24,0,12" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ImageButtonStyle}" Command="{Binding Source={StaticResource ActionCommands}, Path=ShowImage}" CommandParameter="{Binding Image}">
+            <Viewbox StretchDirection="DownOnly">
+              <Image Source="{Binding Image}" Stretch="UniformToFill" />
+            </Viewbox>
+          </Button>
+          <RichTextBlock Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Margin="24"
+                         Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="" />
+        </Grid>
+      </ScrollViewer>
+    </DataTemplate>
+    <DataTemplate x:Key="GETLOCATION1DetailDetailSnapped">
+        <Grid Width="230">
+            <StackPanel>
+                <TextBlock Margin="0,0,0,30" Style="{StaticResource HeaderText}" Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter = 140}" />
+                <Viewbox MaxHeight="250" StretchDirection="DownOnly">
+                  <Image Source="{Binding Image}" />
+                </Viewbox>
+                <RichTextBlock Margin="0, 30" Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

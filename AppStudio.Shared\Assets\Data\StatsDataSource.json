@@ -1,0 +1,16 @@
+{
+  "Items": [
+    {
+      "Title": "Temperature",
+      "Subtitle": "63'F",
+      "ImageUrl": "/Assets/DataImages/weather-153703_640.png",
+      "_id": "47e91779-25b4-46ef-be75-03f48e2c8d37"
+    },
+    {
+      "Title": "Air Quality Index",
+      "Subtitle": "15",
+      "ImageUrl": "/Assets/DataImages/14.jpg",
+      "_id": "eb82a4d3-5b49-4c46-af5a-8f23956e527f"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "Items": [
+    {
+      "Title": "Solid Waste Management",
+      "Subtitle": "is handled by a private company called Republic Services",
+      "ImageUrl": "/Assets/DataImages/recycling7-2.jpg",
+      "_id": "8d5f04c8-9a98-4618-9223-01075ff0ce65"
+    },
+    {
+      "Title": "Recycling Centers",
+      "Subtitle": "Recycling centers close to your location ",
+      "ImageUrl": "/Assets/DataImages/RefreshRecycling_resized-3.jpg",
+      "_id": "5f641e1c-7589-46ef-b54e-15849b2c2721"
+    },
+    {
+      "Title": "Request a Bulk Pick up",
+      "Subtitle": "Call 425-452-4762",
+      "ImageUrl": "/Assets/DataImages/trash-2.jpg",
+      "_id": "7a9084ea-6b52-40fc-ae23-7034d4e54771"
+    },
+    {
+      "Title": "Recycling Events",
+      "Subtitle": "",
+      "ImageUrl": "/Assets/DataImages/one-less-bag-200-2.gif",
+      "_id": "42af4cdf-895e-4430-b59b-d7abb7a5e205"
+    }
+  ]
+}
